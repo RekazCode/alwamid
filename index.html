@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوميض الذهبي للتفتيش والمطابقة</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        brand: {
+                            900: '#0F172A', // Slate 900
+                            800: '#1E293B', // Slate 800
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(to left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #F59E0B; /* Gold */
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 bg-brand-900/95 backdrop-blur-md shadow-lg border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center shadow-lg shadow-gold-500/30">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-2xl text-white tracking-wide">الوميض <span class="text-gold-500">الذهبي</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                    <a href="#home" class="text-gray-200 hover:text-gold-400 font-medium transition duration-300">الرئيسية</a>
+                    <a href="#about" class="text-gray-200 hover:text-gold-400 font-medium transition duration-300">من نحن</a>
+                    <a href="#services" class="text-gray-200 hover:text-gold-400 font-medium transition duration-300">خدماتنا</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-full font-bold shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 hover:-translate-y-0.5 transition duration-300">تواصل معنا</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-200 hover:text-white focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-800 border-t border-gray-700">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-white font-medium hover:bg-brand-900 rounded-md">الرئيسية</a>
+                <a href="#about" class="block px-3 py-2 text-white font-medium hover:bg-brand-900 rounded-md">من نحن</a>
+                <a href="#services" class="block px-3 py-2 text-white font-medium hover:bg-brand-900 rounded-md">خدماتنا</a>
+                <a href="#contact" class="block px-3 py-2 text-gold-400 font-bold hover:bg-brand-900 rounded-md">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-900/40"></div> <!-- Extra overlay -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block py-1 px-3 rounded-full bg-gold-500/20 text-gold-400 text-sm font-semibold mb-6 border border-gold-500/30">
+                    الريادة في الجودة والموثوقية
+                </span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    الوميض <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">الذهبي</span><br>
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 block text-gray-200">للتفتيش والمطابقة</span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-300 mb-10 leading-relaxed">
+                    نقدم خدمات فحص ومطابقة بمعايير عالمية لضمان جودة منتجاتكم وسلامتها، وبناء جسور الثقة في أعمالكم التجارية.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-full font-bold text-lg shadow-lg hover:shadow-gold-500/50 hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2">
+                        <span>اطلب خدماتنا</span>
+                        <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="#about" class="px-8 py-4 bg-white/10 text-white backdrop-blur-sm border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition duration-300">
+                        اكتشف المزيد
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative bottom wave or shape -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12 md:h-24 text-gray-50" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.54,196.4,106.8Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About, Vision, Mission Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-brand-900 section-title">هويتنا المؤسسية</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-lg">تعرف على التزامنا ومبادئنا التي تقودنا نحو التميز في مجال التفتيش والمطابقة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition duration-300 border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-brand-900 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 mb-4">تعريف بالشركة</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        الوميض الذهبي هي شركة ليبية رائدة متخصصة في تقديم خدمات التفتيش والمطابقة الدقيقة والشاملة. نعمل كطرف محايد ومستقل لضمان توافق السلع والمنتجات مع المواصفات القياسية المحلية والدولية، مما يضمن الجودة ويحمي المستهلك.
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition duration-300 border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-brand-900 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 mb-4">رؤيتنا</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        أن نكون الخيار الأول والوجهة الأكثر موثوقية في مجال التفتيش والمطابقة في ليبيا والمنطقة، وأن نساهم في رفع معايير الجودة ودعم الاقتصاد الوطني من خلال خدمات تتسم بالشفافية والاحترافية المطلقة.
+                    </p>
+                </div>
+
+                <!-- Mission -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition duration-300 border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-brand-900 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 mb-4">رسالتنا</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        تقديم خدمات فحص وتفتيش دقيقة باستخدام أحدث التقنيات وأفضل الكفاءات البشرية. نلتزم بحماية الأطراف التجارية وضمان وصول منتجات آمنة ومطابقة للمواصفات إلى الأسواق بأعلى درجات النزاهة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-900 text-white relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#F59E0B 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white section-title">خدماتنا</h2>
+                <p class="mt-4 text-gray-300 max-w-2xl mx-auto text-lg">باقة متكاملة من الخدمات المصممة لضمان أعلى معايير الجودة لعملائنا.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-6 rounded-2xl hover:bg-white/10 transition duration-300 group">
+                    <div class="w-16 h-16 bg-gold-500/20 text-gold-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">تفتيش البضائع</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">فحص شامل للشحنات والبضائع قبل الشحن وعند الوصول للتأكد من الكميات والحالة العامة.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-6 rounded-2xl hover:bg-white/10 transition duration-300 group">
+                    <div class="w-16 h-16 bg-gold-500/20 text-gold-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">المطابقة القياسية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">التأكد من التزام المنتجات والسلع بالمواصفات القياسية الليبية والعالمية المطلوبة.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-6 rounded-2xl hover:bg-white/10 transition duration-300 group">
+                    <div class="w-16 h-16 bg-gold-500/20 text-gold-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">الإشراف المعملي</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">سحب العينات والإشراف على الاختبارات المعملية لضمان سلامة وصلاحية المواد والمنتجات.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-6 rounded-2xl hover:bg-white/10 transition duration-300 group">
+                    <div class="w-16 h-16 bg-gold-500/20 text-gold-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">إصدار الشهادات</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">إصدار شهادات المطابقة والاعتماد الموثوقة لتسهيل الإجراءات الجمركية والتجارية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col lg:flex-row">
+                
+                <!-- Contact Information -->
+                <div class="lg:w-2/5 bg-brand-900 p-10 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl -z-0"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-bold mb-2">معلومات التواصل</h2>
+                        <p class="text-gray-400 mb-10">يسعدنا تواصلكم معنا للرد على استفساراتكم وتقديم خدماتنا.</p>
+                        
+                        <div class="space-y-8">
+                            <!-- Location -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-gold-400 border border-white/5">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">العنوان</h4>
+                                    <p class="text-gray-300 leading-relaxed">ليبيا - طرابلس<br>شارع بغداد المتفرع من امحمد المقريف</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-gold-400 border border-white/5">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">رقم الهاتف</h4>
+                                    <a href="tel:0926572800" class="text-gray-300 hover:text-gold-400 transition" dir="ltr">0926572800</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-gold-400 border border-white/5">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">البريد الإلكتروني</h4>
+                                    <a href="mailto:goldelight00@gmail.com" class="text-gray-300 hover:text-gold-400 transition">goldelight00@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Visual purely) -->
+                <div class="lg:w-3/5 p-10 bg-white">
+                    <h3 class="text-2xl font-bold text-brand-900 mb-6">أرسل لنا رسالة</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">الاسم الكامل</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition" placeholder="أدخل اسمك">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">رقم الهاتف</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition" placeholder="رقم هاتفك">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">الموضوع</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition" placeholder="موضوع الرسالة">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">الرسالة</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition resize-none" placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-800 to-brand-900 text-white rounded-lg font-bold text-lg hover:shadow-lg hover:from-brand-900 hover:to-black transition duration-300">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-gray-400 py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <span class="font-bold text-xl text-white">الوميض <span class="text-gold-500">الذهبي</span></span>
+                </div>
+                <div class="text-sm">
+                    جميع الحقوق محفوظة &copy; 2024 لشركة الوميض الذهبي للتفتيش والمطابقة.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
